@@ -1,13 +1,14 @@
-[gd_scene load_steps=13 format=3 uid="uid://cu0dekl1v85pm"]
+[gd_scene load_steps=15 format=3 uid="uid://cu0dekl1v85pm"]
 
-[ext_resource type="Texture2D" uid="uid://k24i4ibge47" path="res://Assets/images.steamusercontent.jpg" id="1_06t4h"]
-[ext_resource type="Script" uid="uid://bylp3g1a3lxc6" path="res://Scripts/main_menu.gd" id="1_7vrkn"]
-[ext_resource type="AudioStream" uid="uid://bilt101cyjgu1" path="res://Assets/THE WORLD REVOLVING.mp3" id="3_fu7sn"]
-[ext_resource type="AudioStream" uid="uid://bd5nuxex0r2md" path="res://Assets/Luigi Scream.mp3" id="4_nlkkf"]
-[ext_resource type="Script" uid="uid://d2gok5i08rkx2" path="res://Scripts/audio_controll.gd" id="5_glbon"]
+[ext_resource type="Script" uid="uid://bylp3g1a3lxc6" path="res://Scripts/main_menu.gd" id="1_n45e2"]
+[ext_resource type="Texture2D" uid="uid://k24i4ibge47" path="res://Assets/images.steamusercontent.jpg" id="2_opfnp"]
+[ext_resource type="AudioStream" uid="uid://bd5nuxex0r2md" path="res://Assets/Luigi Scream.mp3" id="3_cp0ys"]
+[ext_resource type="AudioStream" uid="uid://bilt101cyjgu1" path="res://Assets/THE WORLD REVOLVING.mp3" id="4_yhxw7"]
+[ext_resource type="Script" uid="uid://d2gok5i08rkx2" path="res://Scripts/audio_controll.gd" id="5_trj04"]
+[ext_resource type="Script" uid="uid://binfeuwcqo55r" path="res://Scenes/fullscreen_control.gd" id="6_opfnp"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7vrkn"]
-texture = ExtResource("1_06t4h")
+texture = ExtResource("2_opfnp")
 modulate_color = Color(0.6052743, 0.6052743, 0.6052743, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fu7sn"]
@@ -33,6 +34,9 @@ thickness = 6
 color = Color(0.7081948, 0.04201132, 0.14823258, 1)
 thickness = 6
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_opfnp"]
+bg_color = Color(0.8217887, 0.8217887, 0.8217885, 1)
+
 [node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -40,7 +44,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_7vrkn")
+script = ExtResource("1_n45e2")
 
 [node name="Background" type="Panel" parent="."]
 layout_mode = 1
@@ -96,7 +100,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_fu7sn")
 text = "Options"
 
 [node name="scream" type="AudioStreamPlayer" parent="MainButtons/Button2"]
-stream = ExtResource("4_nlkkf")
+stream = ExtResource("3_cp0ys")
 bus = &"SFX"
 
 [node name="Button3" type="Button" parent="MainButtons"]
@@ -132,7 +136,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_fu7sn")
+stream = ExtResource("4_yhxw7")
 autoplay = true
 bus = &"Music"
 
@@ -195,10 +199,34 @@ grow_vertical = 2
 theme_override_styles/slider = SubResource("StyleBoxLine_jix8l")
 theme_override_styles/grabber_area = SubResource("StyleBoxLine_glbon")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_glbon")
-script = ExtResource("5_glbon")
+max_value = 1.0
+step = 0.01
+value = 1.0
+script = ExtResource("5_trj04")
+audio_bus_name = "Music"
+
+[node name="FullscreenControl" type="CheckBox" parent="Options"]
+layout_direction = 3
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.70600003
+anchor_top = 0.44900003
+anchor_right = 0.73200005
+anchor_bottom = 0.44900003
+offset_left = -210.69601
+offset_top = -15.516006
+offset_right = 41.487976
+offset_bottom = 15.483994
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_outline_color = Color(0.62663716, 0.21130681, 0.22424504, 1)
+theme_override_styles/disabled = SubResource("StyleBoxFlat_opfnp")
+text = "Fullscreen"
+script = ExtResource("6_opfnp")
 
 [connection signal="pressed" from="MainButtons/Button" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="MainButtons/Button2" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="MainButtons/Button3" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="Options/Return" to="." method="_on_return_options_pressed"]
 [connection signal="value_changed" from="Options/AudioControll" to="Options/AudioControll" method="_on_value_changed"]
+[connection signal="toggled" from="Options/FullscreenControl" to="Options/FullscreenControl" method="_on_toggled"]
