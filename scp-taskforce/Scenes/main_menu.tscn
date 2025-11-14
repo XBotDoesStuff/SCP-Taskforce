@@ -1,7 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://cu0dekl1v85pm"]
+[gd_scene load_steps=14 format=3 uid="uid://cu0dekl1v85pm"]
 
 [ext_resource type="Script" uid="uid://bylp3g1a3lxc6" path="res://Scripts/main_menu.gd" id="1_n45e2"]
-[ext_resource type="Texture2D" uid="uid://k24i4ibge47" path="res://Assets/images.steamusercontent.jpg" id="2_opfnp"]
+[ext_resource type="Texture2D" uid="uid://beugogm8ox3mg" path="res://Assets/pixil-frame-0.png" id="2_opfnp"]
 [ext_resource type="AudioStream" uid="uid://bd5nuxex0r2md" path="res://Assets/Luigi Scream.mp3" id="3_cp0ys"]
 [ext_resource type="AudioStream" uid="uid://bilt101cyjgu1" path="res://Assets/THE WORLD REVOLVING.mp3" id="4_yhxw7"]
 [ext_resource type="Script" uid="uid://d2gok5i08rkx2" path="res://Scripts/audio_controll.gd" id="5_trj04"]
@@ -34,9 +34,6 @@ thickness = 6
 color = Color(0.7081948, 0.04201132, 0.14823258, 1)
 thickness = 6
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_opfnp"]
-bg_color = Color(0.8217887, 0.8217887, 0.8217885, 1)
-
 [node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -56,7 +53,6 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_7vrkn")
 
 [node name="MainButtons" type="VBoxContainer" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -141,6 +137,7 @@ autoplay = true
 bus = &"Music"
 
 [node name="Options" type="Panel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -220,7 +217,6 @@ offset_bottom = 15.483994
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_outline_color = Color(0.62663716, 0.21130681, 0.22424504, 1)
-theme_override_styles/disabled = SubResource("StyleBoxFlat_opfnp")
 text = "Fullscreen"
 script = ExtResource("6_opfnp")
 

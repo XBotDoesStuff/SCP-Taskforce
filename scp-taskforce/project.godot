@@ -19,10 +19,6 @@ config/icon="res://Assets/icon.svg"
 
 buses/default_bus_layout="res://Resources/default_bus_layout.tres"
 
-[display]
-
-window/stretch/mode="canvas_items"
-
 [input]
 
 primary_action={
