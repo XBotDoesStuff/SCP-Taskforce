@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://6fdcywkhxajt"]
+
+[ext_resource type="Texture2D" uid="uid://k24i4ibge47" path="res://images.steamusercontent.jpg" id="1_37kl0"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8uh7m"]
+texture = ExtResource("1_37kl0")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 768.0
+offset_bottom = 416.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_8uh7m")
