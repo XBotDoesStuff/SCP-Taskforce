@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bd5nuxex0r2md"
+path="res://.godot/imported/Luigi Scream.mp3-6fb1cdf875464589e17b6f8d3ef6a531.mp3str"
+
+[deps]
+
+source_file="res://Assets/Luigi Scream.mp3"
+dest_files=["res://.godot/imported/Luigi Scream.mp3-6fb1cdf875464589e17b6f8d3ef6a531.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

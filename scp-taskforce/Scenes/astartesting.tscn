@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b7o1f8vqghacx" path="res://Sprites/Room_Builder_free_32x32.png" id="1_helln"]
 [ext_resource type="Script" uid="uid://b2qbrlsp3qj1m" path="res://Scripts/AstarMovement.gd" id="2_c2ltl"]
 [ext_resource type="Script" uid="uid://cb461dmlric5j" path="res://Scripts/player.gd" id="3_5q6jn"]
-[ext_resource type="Texture2D" uid="uid://bh6hcpdpgwx6u" path="res://icon.svg" id="3_n4ieb"]
+[ext_resource type="Texture2D" uid="uid://bh6hcpdpgwx6u" path="res://Assets/icon.svg" id="3_n4ieb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c2ltl"]
 texture = ExtResource("1_helln")
