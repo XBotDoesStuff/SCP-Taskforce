@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=4 uid="uid://7vfpfp6tqejq"]
+[gd_scene load_steps=10 format=4 uid="uid://7vfpfp6tqejq"]
 
 [ext_resource type="Texture2D" uid="uid://b7o1f8vqghacx" path="res://Sprites/Room_Builder_free_32x32.png" id="1_helln"]
 [ext_resource type="Script" uid="uid://b2qbrlsp3qj1m" path="res://Scripts/AstarMovement.gd" id="2_c2ltl"]
 [ext_resource type="Script" uid="uid://cb461dmlric5j" path="res://Scripts/player.gd" id="3_5q6jn"]
+[ext_resource type="Texture2D" uid="uid://beugogm8ox3mg" path="res://Assets/pixil-frame-0.png" id="3_aifai"]
 [ext_resource type="Texture2D" uid="uid://bh6hcpdpgwx6u" path="res://Assets/icon.svg" id="3_n4ieb"]
+[ext_resource type="Script" uid="uid://c3r3r6oqh24cu" path="res://Scripts/grid_select.gd" id="6_aifai"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c2ltl"]
 texture = ExtResource("1_helln")
@@ -935,12 +937,16 @@ tile_map_data = PackedByteArray("AAAAAAAAAAAPAAYAAAAAAAEAAAAPAAYAAAAAAAIAAAAPAAY
 tile_set = SubResource("TileSet_n4ieb")
 script = ExtResource("2_c2ltl")
 
-[node name="Player" type="Area2D" parent="."]
+[node name="NavAgent" type="Area2D" parent="."]
 script = ExtResource("3_5q6jn")
 
-[node name="Sprite2D" type="Sprite2D" parent="Player"]
+[node name="Sprite2D" type="Sprite2D" parent="NavAgent"]
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("3_n4ieb")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavAgent"]
 shape = SubResource("RectangleShape2D_ske3e")
+
+[node name="GridSelect" type="Sprite2D" parent="."]
+texture = ExtResource("3_aifai")
+script = ExtResource("6_aifai")
