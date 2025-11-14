@@ -1,7 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://cu0dekl1v85pm"]
+[gd_scene load_steps=13 format=3 uid="uid://cu0dekl1v85pm"]
 
 [ext_resource type="Texture2D" uid="uid://k24i4ibge47" path="res://images.steamusercontent.jpg" id="1_06t4h"]
 [ext_resource type="Script" uid="uid://bylp3g1a3lxc6" path="res://main_menu.gd" id="1_7vrkn"]
+[ext_resource type="AudioStream" uid="uid://bilt101cyjgu1" path="res://THE WORLD REVOLVING.mp3" id="3_fu7sn"]
+[ext_resource type="AudioStream" uid="uid://bd5nuxex0r2md" path="res://Luigi Scream.mp3" id="4_nlkkf"]
+[ext_resource type="Script" uid="uid://d2gok5i08rkx2" path="res://audio_controll.gd" id="5_glbon"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7vrkn"]
 texture = ExtResource("1_06t4h")
@@ -22,6 +25,14 @@ bg_color = Color(0.41598046, 0.41598046, 0.41598028, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fu7sn"]
 
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_jix8l"]
+color = Color(0.8431839, 0.8431839, 0.84318376, 1)
+thickness = 6
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_glbon"]
+color = Color(0.7081948, 0.04201132, 0.14823258, 1)
+thickness = 6
+
 [node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -31,7 +42,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7vrkn")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Background" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -40,7 +51,8 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_7vrkn")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="MainButtons" type="VBoxContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -55,7 +67,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20
 
-[node name="Button" type="Button" parent="VBoxContainer"]
+[node name="Button" type="Button" parent="MainButtons"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -69,7 +81,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_glbon")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_fu7sn")
 text = "Start"
 
-[node name="Button2" type="Button" parent="VBoxContainer"]
+[node name="Button2" type="Button" parent="MainButtons"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -83,7 +95,11 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_glbon")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_fu7sn")
 text = "Options"
 
-[node name="Button3" type="Button" parent="VBoxContainer"]
+[node name="scream" type="AudioStreamPlayer" parent="MainButtons/Button2"]
+stream = ExtResource("4_nlkkf")
+bus = &"SFX"
+
+[node name="Button3" type="Button" parent="MainButtons"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -115,6 +131,74 @@ text = "SCP: Taskforce"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_exit_pressed"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_fu7sn")
+autoplay = true
+bus = &"Music"
+
+[node name="Options" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -208.0
+offset_top = -142.0
+offset_right = 208.0
+offset_bottom = 142.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Options"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 24
+text = "Options"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Return" type="Button" parent="Options"]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 192.0
+offset_right = 372.0
+offset_bottom = 250.0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 42
+theme_override_styles/normal = SubResource("StyleBoxFlat_fu7sn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jix8l")
+theme_override_styles/hover = SubResource("StyleBoxFlat_glbon")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fu7sn")
+text = "Return"
+
+[node name="AudioControll" type="HSlider" parent="Options"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.48600003
+anchor_top = 0.296
+anchor_right = 0.48600003
+anchor_bottom = 0.296
+offset_left = -128.17601
+offset_top = -8.064003
+offset_right = 127.82399
+offset_bottom = 7.935997
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/slider = SubResource("StyleBoxLine_jix8l")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_glbon")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_glbon")
+script = ExtResource("5_glbon")
+
+[connection signal="pressed" from="MainButtons/Button" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="MainButtons/Button2" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MainButtons/Button3" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Options/Return" to="." method="_on_return_options_pressed"]
+[connection signal="value_changed" from="Options/AudioControll" to="Options/AudioControll" method="_on_value_changed"]
