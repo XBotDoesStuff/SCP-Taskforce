@@ -14,7 +14,10 @@ func init_astar():
 		astar_grid.set_point_solid(cell, is_cell_solid(cell))
 
 func is_cell_solid(cell : Vector2i) -> bool:
-	return get_cell_tile_data(cell).get_custom_data(is_solid)
+	if astar_grid.is_in_bounds(cell.x, cell.y):
+		return get_cell_tile_data(cell).get_custom_data(is_solid)
+	else:
+		return false
 
 func is_point_walkable(local_position):
 	var map_position = local_to_map(local_position)
