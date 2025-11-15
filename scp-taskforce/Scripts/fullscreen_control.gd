@@ -1,6 +1,7 @@
 extends CheckBox
 @onready var main_buttons: VBoxContainer = $MainButtons
 @onready var scream: AudioStreamPlayer = $"../../MainButtons/Button2/scream"
+@onready var yelp: AudioStreamPlayer = $"../../MainButtons/Button2/yelp"
 
 
 
@@ -12,3 +13,4 @@ func _on_toggled(toggled_on: bool) -> void:
 	
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+		yelp.play()

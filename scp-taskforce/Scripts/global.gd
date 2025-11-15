@@ -1,17 +1,13 @@
-extends Control
+extends Node2D
 
-@onready var alarm: AudioStreamPlayer = %alarm
-
+var start_dialogue = load("res://Dialogue/testuntitled.dialogue")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if get_tree().current_scene.name == "startscene":
-		DialogueManager.show_example_dialogue_balloon(load("res://Dialogue/testuntitled.dialogue"))
+		DialogueManager.show_dialogue_balloon(start_dialogue)
 
 
-	
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func change_scene(scene_path : String):
+	print("THIS IS BEING CALLED" + str(is_inside_tree()))
+	get_tree().change_scene_to_file(scene_path)

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ct3x8wn4d2crv"
+path="res://.godot/imported/luigi yelp.mp3-1a467d25586aa08b75ad6110cfdd8550.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/luigi yelp.mp3"
+dest_files=["res://.godot/imported/luigi yelp.mp3-1a467d25586aa08b75ad6110cfdd8550.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

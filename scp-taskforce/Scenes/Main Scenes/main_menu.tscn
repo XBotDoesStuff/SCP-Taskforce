@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://cu0dekl1v85pm"]
+[gd_scene load_steps=15 format=3 uid="uid://cu0dekl1v85pm"]
 
 [ext_resource type="Script" uid="uid://bylp3g1a3lxc6" path="res://Scripts/main_menu.gd" id="1_n45e2"]
 [ext_resource type="Texture2D" uid="uid://cw86kqehi2mkm" path="res://Assets/Sprites/backgroundimg.png" id="2_opfnp"]
 [ext_resource type="AudioStream" uid="uid://bd5nuxex0r2md" path="res://Assets/Audio/Luigi Scream.mp3" id="3_cp0ys"]
+[ext_resource type="AudioStream" uid="uid://ct3x8wn4d2crv" path="res://Assets/Audio/luigi yelp.mp3" id="4_gwsdb"]
 [ext_resource type="AudioStream" uid="uid://doisc0fns6eb5" path="res://Assets/Audio/Main Menu Theme.mp3" id="4_vyyix"]
 [ext_resource type="Script" uid="uid://d2gok5i08rkx2" path="res://Scripts/audio_controll.gd" id="5_trj04"]
 [ext_resource type="Script" uid="uid://binfeuwcqo55r" path="res://Scripts/fullscreen_control.gd" id="6_opfnp"]
@@ -98,6 +99,9 @@ text = "Options"
 [node name="scream" type="AudioStreamPlayer" parent="MainButtons/Button2"]
 stream = ExtResource("3_cp0ys")
 bus = &"SFX"
+
+[node name="yelp" type="AudioStreamPlayer" parent="MainButtons/Button2"]
+stream = ExtResource("4_gwsdb")
 
 [node name="Button3" type="Button" parent="MainButtons"]
 layout_mode = 2
