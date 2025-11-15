@@ -33,9 +33,11 @@ func _process(delta: float) -> void:
 func fire():
 	var projectile = stats.proj_scene.instantiate()
 	get_tree().root.add_child(projectile)
+	
 	projectile.global_transform = $Muzzle.global_transform
 	var deviation = deg_to_rad(stats.spread) / 2
 	projectile.global_rotation += randf_range(-deviation, deviation)
+	projectile.damage = stats.damage
 	
 	$FireRate.start()
 	can_fire = false

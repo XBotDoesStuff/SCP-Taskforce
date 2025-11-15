@@ -1,11 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://bfgan6dgo0pvo"]
+[gd_scene load_steps=11 format=3 uid="uid://bfgan6dgo0pvo"]
 
-[ext_resource type="Script" path="res://Scripts/player.gd" id="1_cvnsp"]
+[ext_resource type="Script" uid="uid://ksv3dcph426a" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://cb7mpgj11eu2u" path="res://Assets/Sprites/MTF_PLAYER.png" id="2_cvnsp"]
 [ext_resource type="Script" uid="uid://byhcp6vxke4m2" path="res://Scripts/weapon.gd" id="3_6t5aa"]
 [ext_resource type="Resource" uid="uid://b3bmnil2ntdpa" path="res://Resources/Weapons/glock18.tres" id="4_vgqql"]
 [ext_resource type="Texture2D" uid="uid://cw2rqlq3natb" path="res://Assets/Sprites/glock18.png" id="5_fkybt"]
-[ext_resource type="Script" path="res://Scripts/weapon_hud.gd" id="6_x3wgy"]
+[ext_resource type="Script" uid="uid://cb6mwpk0cs6rm" path="res://Scripts/weapon_hud.gd" id="6_x3wgy"]
+[ext_resource type="Script" uid="uid://c7tesqgv348nf" path="res://Components/health.gd" id="7_3smsa"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cvnsp"]
 radius = 21.0
@@ -34,7 +35,6 @@ animations = [{
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 z_index = 1
-position = Vector2(2, 0)
 script = ExtResource("1_cvnsp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -71,7 +71,6 @@ one_shot = true
 
 [node name="WeaponHUD" type="Node2D" parent="."]
 top_level = true
-position = Vector2(2, 0)
 script = ExtResource("6_x3wgy")
 
 [node name="Ammo" type="Label" parent="WeaponHUD"]
@@ -96,8 +95,13 @@ metadata/_edit_use_anchors_ = true
 remote_path = NodePath("../WeaponHUD")
 update_rotation = false
 
+[node name="Health" type="Node" parent="."]
+script = ExtResource("7_3smsa")
+metadata/_custom_type_script = "uid://c7tesqgv348nf"
+
 [connection signal="reload_finished" from="Weapon" to="WeaponHUD" method="_on_weapon_reload_finished"]
 [connection signal="weapon_fired" from="Weapon" to="WeaponHUD" method="_on_weapon_weapon_fired"]
 [connection signal="weapon_reload" from="Weapon" to="WeaponHUD" method="_on_weapon_weapon_reload"]
 [connection signal="timeout" from="Weapon/FireRate" to="Weapon" method="_on_fire_rate_timeout"]
 [connection signal="timeout" from="Weapon/Reload" to="Weapon" method="_on_reload_timeout"]
+[connection signal="health_depleted" from="Health" to="." method="_on_health_health_depleted"]

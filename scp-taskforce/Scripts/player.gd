@@ -1,8 +1,7 @@
 extends CharacterBody2D
 
 @export var speed = 400.0
-var max_health = 100
-var health = max_health
+signal game_over
 
 func get_input():
 	var input_dir = Input.get_vector("move_left", "move_right", "move_up", "move_down")
@@ -13,3 +12,11 @@ func _physics_process(delta: float) -> void:
 	look_at(mouse_pos)
 	get_input()
 	move_and_slide()
+
+func _on_health_health_depleted() -> void:
+	game_over.emit()
+	queue_free()
+
+func _ready() -> void:
+	$Health.set_max_health(-400)
+	print($Health.max_health)
