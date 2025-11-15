@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="WeaponStats" load_steps=5 format=3 uid="uid://b3bmnil2ntdpa"]
+
+[ext_resource type="PackedScene" uid="uid://byp73jpkel7h" path="res://Scenes/Projectiles/bullet.tscn" id="1_a2r70"]
+[ext_resource type="Script" uid="uid://dyrgfcpdi8xkp" path="res://Scripts/weapon_stats.gd" id="1_wwf1i"]
+[ext_resource type="Texture2D" uid="uid://cw2rqlq3natb" path="res://Assets/glock18.png" id="2_ge8wi"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a2r70"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ge8wi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("1_wwf1i")
+fire_rate = 0.01
+damage = 10.0
+mag_size = 18
+spread = 5.0
+proj_scene = ExtResource("1_a2r70")
+proj_count = 1
+sprite = SubResource("SpriteFrames_a2r70")
+sprite_offset = Vector2(20, 0)
+muzzle_offset = Vector2(63, 21)
+metadata/_custom_type_script = "uid://dyrgfcpdi8xkp"
