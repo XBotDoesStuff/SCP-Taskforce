@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="WeaponStats" load_steps=3 format=3 uid="uid://ceeu1jw3rqhsg"]
+[gd_resource type="Resource" script_class="WeaponStats" load_steps=4 format=3 uid="uid://ceeu1jw3rqhsg"]
 
+[ext_resource type="AudioStream" uid="uid://2vnx1shfqgn3" path="res://Assets/Audio/submachine_gun.wav" id="1_2rwc3"]
 [ext_resource type="PackedScene" uid="uid://byp73jpkel7h" path="res://Scenes/Projectiles/bullet.tscn" id="1_w4ai3"]
 [ext_resource type="Script" uid="uid://dyrgfcpdi8xkp" path="res://Scripts/weapon_stats.gd" id="2_2rwc3"]
 
@@ -12,6 +13,7 @@ spread = 3.0
 reload_time = -1.0
 proj_scene = ExtResource("1_w4ai3")
 proj_count = 1
+fire_sound = ExtResource("1_2rwc3")
 refill_rate = 0.4
 refill_count = 3
 metadata/_custom_type_script = "uid://dyrgfcpdi8xkp"
