@@ -21,8 +21,15 @@ func _on_health_health_depleted() -> void:
 	queue_free()
 
 func _ready() -> void:
-	$Health.set_max_health(max_hp)
-	print($Health.max_health)
+	global.player = self
+	if global.saved_health:
+		$Health.health = global.saved_health
+	else:
+		$Health.health = max_hp
+	if global.saved_equipped_weapon:
+		equip_weapon(global.saved_equipped_weapon)
+	if global.saved_weapon_inv:
+		$Weapon.weapon_inv = global.saved_weapon_inv
 
 func equip_weapon(weapon : WeaponInstance):
 	if not weapon in $Weapon.weapon_inv:
