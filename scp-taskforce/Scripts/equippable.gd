@@ -1,12 +1,9 @@
 class_name Equippable
 extends Node2D
-@onready var player: Player = %Player
+@onready var player: Player = global.player
 
 @export var equippable_data : EquippableData
 var interactable : bool = false
-
-func _init(_equippable_data):
-	equippable_data = _equippable_data
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

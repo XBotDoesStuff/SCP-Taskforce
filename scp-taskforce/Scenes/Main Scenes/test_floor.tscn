@@ -88,7 +88,7 @@ texture = ExtResource("7_fqj0v")
 position = Vector2(539.00024, 411.9999)
 rotation = 3.1311002
 scale = Vector2(2.8423877, 2.8620262)
-target_position = Vector2(-0.47987366, 45.41987)
+target_position = Vector2(-0.48, 50)
 
 [node name="Enemy" parent="." instance=ExtResource("9_ex7dg")]
 position = Vector2(1003, 350)
