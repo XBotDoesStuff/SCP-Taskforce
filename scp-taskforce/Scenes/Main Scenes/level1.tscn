@@ -1,12 +1,27 @@
-[gd_scene load_steps=4 format=4 uid="uid://bflyegfgc1tdc"]
+[gd_scene load_steps=9 format=4 uid="uid://bflyegfgc1tdc"]
 
+[ext_resource type="Script" uid="uid://b5vdd8qhrift8" path="res://Scripts/level_1.gd" id="1_aqpj4"]
 [ext_resource type="PackedScene" uid="uid://bfgan6dgo0pvo" path="res://Scenes/player.tscn" id="2_1mwa1"]
+[ext_resource type="Resource" uid="uid://dxusxsygr2dl3" path="res://Resources/Enemies/dog.tres" id="2_i3nbf"]
+[ext_resource type="PackedScene" uid="uid://bg1k4kbqniktx" path="res://Scenes/dog.tscn" id="2_k0xxv"]
 [ext_resource type="TileSet" uid="uid://b0g3klxwnvbqs" path="res://Resources/new_tile_set.tres" id="2_mrjn4"]
 [ext_resource type="PackedScene" uid="uid://5ej0ohblbbvj" path="res://Scenes/exit.tscn" id="3_1mwa1"]
+[ext_resource type="Shape2D" uid="uid://cb86eonr1xe8p" path="res://Resources/dog_hit_circle.tres" id="3_lrhdj"]
+
+[sub_resource type="Curve2D" id="Curve2D_k0xxv"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 104, 44, 0, 0, 0, 0, 3404, 23, 0, 0, 0, 0, 3409, 6138, 0, 0, 0, 0, 179, 5988, 0, 0, 0, 0, 104, 44)
+}
+point_count = 5
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_aqpj4")
+dog_stats = ExtResource("2_i3nbf")
+hit_thingy = ExtResource("3_lrhdj")
+dog = ExtResource("2_k0xxv")
 
 [node name="Player" parent="." instance=ExtResource("2_1mwa1")]
+unique_name_in_owner = true
 position = Vector2(499, 631)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -16,3 +31,15 @@ tile_set = ExtResource("2_mrjn4")
 [node name="testfloorentrance" parent="." instance=ExtResource("3_1mwa1")]
 position = Vector2(34, 527)
 destination_scene = "res://Scenes/Main Scenes/test_floor.tscn"
+
+[node name="DogSpawner" type="Path2D" parent="."]
+curve = SubResource("Curve2D_k0xxv")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="DogSpawner"]
+position = Vector2(104, 44)
+rotation = -0.0063635507
+
+[node name="MobSpawn" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="MobSpawn" to="." method="_on_mob_spawn_timeout"]

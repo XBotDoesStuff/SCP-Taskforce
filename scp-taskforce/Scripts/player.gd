@@ -4,6 +4,7 @@ extends CharacterBody2D
 @export var speed = 400.0
 @export var max_hp = 100
 signal game_over
+@onready var weapon = $Weapon
 
 func get_input():
 	var input_dir = Input.get_vector("move_left", "move_right", "move_up", "move_down")
@@ -27,3 +28,18 @@ func equip_weapon(weapon : WeaponInstance):
 	if not weapon in $Weapon.weapon_inv:
 		$Weapon.weapon_inv.append(weapon)
 		print(str($Weapon.weapon_inv))
+
+func get_equipped_weapon():
+	return $Weapon.equipped_weapon
+
+func get_weapon_inv():
+	return $Weapon.weapon_inv
+
+func get_current_hp():
+	return $Health.health
+
+func set_weapon_inv(weapon_inv : Array[WeaponInstance]):
+	$Weapon.weapon_inv = weapon_inv
+
+func set_current_hp(health):
+	$Health.health = health
