@@ -22,6 +22,7 @@ texture = ExtResource("2_t1vox")
 one_shot = true
 
 [node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 0
 script = ExtResource("3_t1vox")
 metadata/_custom_type_script = "uid://bbapww841rbn2"
 

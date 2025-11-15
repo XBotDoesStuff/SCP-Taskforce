@@ -19,3 +19,7 @@ extends Resource
 @export var muzzle_offset : Vector2
 @export var reload_sound : AudioStream
 @export var fire_sound : AudioStream
+
+@export_category("Special")
+@export var refill_rate : float = 0.0
+@export var refill_count : int = 0

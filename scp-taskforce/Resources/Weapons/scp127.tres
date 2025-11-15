@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="WeaponStats" load_steps=3 format=3 uid="uid://ceeu1jw3rqhsg"]
+
+[ext_resource type="PackedScene" uid="uid://byp73jpkel7h" path="res://Scenes/Projectiles/bullet.tscn" id="1_w4ai3"]
+[ext_resource type="Script" uid="uid://dyrgfcpdi8xkp" path="res://Scripts/weapon_stats.gd" id="2_2rwc3"]
+
+[resource]
+script = ExtResource("2_2rwc3")
+fire_rate = 0.05
+damage = 15.0
+mag_size = 60
+spread = 3.0
+reload_time = -1.0
+proj_scene = ExtResource("1_w4ai3")
+proj_count = 1
+refill_rate = 0.4
+refill_count = 3
+metadata/_custom_type_script = "uid://dyrgfcpdi8xkp"
