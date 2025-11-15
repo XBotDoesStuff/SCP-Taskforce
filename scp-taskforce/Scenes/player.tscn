@@ -107,6 +107,8 @@ metadata/_custom_type_script = "uid://bntb2sm358vkv"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
 shape = SubResource("CircleShape2D_cvnsp")
 
+[node name="RayCast2D" type="RayCast2D" parent="."]
+
 [connection signal="overheat" from="Weapon" to="WeaponHUD" method="_on_weapon_overheat"]
 [connection signal="reload_finished" from="Weapon" to="WeaponHUD" method="_on_weapon_reload_finished"]
 [connection signal="weapon_fired" from="Weapon" to="WeaponHUD" method="_on_weapon_weapon_fired"]
