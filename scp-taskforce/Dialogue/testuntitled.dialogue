@@ -3,11 +3,11 @@
 
 [speed=0.2]*Alarm blaring* [ID:ALARM_BLARING_A5E68D]
 
-[speed=0.2]nghh, what happened? [ID:NGHH_WHAT_HAPPENED_704EAF]
+[speed=0.2]Nghh, what happened? [ID:NGHH_WHAT_HAPPENED_704EAF]
 
 [speed=0.2]I can barely see . . .
 
-[speed=0.2]The last thing i remember was that giant explosion
+[speed=0.2]The last thing i remember was that giant explosion...
 - wake up
 do global.change_scene("res://Scenes/Main Scenes/test_floor.tscn")
 => END
