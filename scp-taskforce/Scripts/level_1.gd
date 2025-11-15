@@ -17,11 +17,3 @@ func _on_mob_spawn_timeout() -> void:
 	new_dog.position = spawn_location.position
 	
 	add_child(new_dog)
-func _process(delta: float) -> void:
-	update_score()
-	
-func update_score():
-	global.previous_score = global.current_score
-	if global.current_score > global.high_score:
-		global.high_score = global.current_score
-	global.current_score = 0
