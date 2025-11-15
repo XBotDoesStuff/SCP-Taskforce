@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://byp73jpkel7h" path="res://Scenes/Projectiles/bullet.tscn" id="1_a2r70"]
 [ext_resource type="Script" uid="uid://dyrgfcpdi8xkp" path="res://Scripts/weapon_stats.gd" id="1_wwf1i"]
-[ext_resource type="Texture2D" uid="uid://cw2rqlq3natb" path="res://Assets/glock18.png" id="2_ge8wi"]
+[ext_resource type="Texture2D" uid="uid://cw2rqlq3natb" path="res://Assets/Sprites/glock18.png" id="2_ge8wi"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_a2r70"]
 animations = [{

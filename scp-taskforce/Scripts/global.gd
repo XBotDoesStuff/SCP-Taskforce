@@ -6,7 +6,7 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if get_tree().current_scene.name == "startscene":
-		DialogueManager.show_example_dialogue_balloon(load("res://testuntitled.dialogue"))
+		DialogueManager.show_example_dialogue_balloon(load("res://Dialogue/testuntitled.dialogue"))
 
 
 	

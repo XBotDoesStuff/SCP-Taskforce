@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cb7mpgj11eu2u"
-path="res://.godot/imported/MTF_PLAYER.png-522cf094d76a0be692648d7895e42ee1.ctex"
+uid="uid://btx6nsyhjei7n"
+path="res://.godot/imported/bullet.png-01b797d76f64f0a3fea939dd04a7ef5b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/MTF_PLAYER.png"
-dest_files=["res://.godot/imported/MTF_PLAYER.png-522cf094d76a0be692648d7895e42ee1.ctex"]
+source_file="res://Assets/Sprites/bullet.png"
+dest_files=["res://.godot/imported/bullet.png-01b797d76f64f0a3fea939dd04a7ef5b.ctex"]
 
 [params]
 

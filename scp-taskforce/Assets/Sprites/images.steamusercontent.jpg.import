@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cw2rqlq3natb"
-path="res://.godot/imported/glock18.png-b5e681cb720c20760166c8e0d1deb081.ctex"
+uid="uid://k24i4ibge47"
+path="res://.godot/imported/images.steamusercontent.jpg-8e9a38111cf62f49326b7865b5c8418d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/glock18.png"
-dest_files=["res://.godot/imported/glock18.png-b5e681cb720c20760166c8e0d1deb081.ctex"]
+source_file="res://Assets/Sprites/images.steamusercontent.jpg"
+dest_files=["res://.godot/imported/images.steamusercontent.jpg-8e9a38111cf62f49326b7865b5c8418d.ctex"]
 
 [params]
 

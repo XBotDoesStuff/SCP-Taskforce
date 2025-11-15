@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=3 uid="uid://bfgan6dgo0pvo"]
 
 [ext_resource type="Script" uid="uid://ksv3dcph426a" path="res://Scripts/player.gd" id="1_cvnsp"]
-[ext_resource type="Texture2D" uid="uid://cb7mpgj11eu2u" path="res://Assets/MTF_PLAYER.png" id="2_cvnsp"]
+[ext_resource type="Texture2D" uid="uid://cb7mpgj11eu2u" path="res://Assets/Sprites/MTF_PLAYER.png" id="2_cvnsp"]
 [ext_resource type="Script" uid="uid://byhcp6vxke4m2" path="res://Scripts/weapon.gd" id="3_6t5aa"]
 [ext_resource type="Resource" uid="uid://b3bmnil2ntdpa" path="res://Resources/Weapons/glock18.tres" id="4_vgqql"]
-[ext_resource type="Texture2D" uid="uid://cw2rqlq3natb" path="res://Assets/glock18.png" id="5_fkybt"]
+[ext_resource type="Texture2D" uid="uid://cw2rqlq3natb" path="res://Assets/Sprites/glock18.png" id="5_fkybt"]
 [ext_resource type="Script" uid="uid://cb6mwpk0cs6rm" path="res://Scripts/weapon_hud.gd" id="6_x3wgy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cvnsp"]

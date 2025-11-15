@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bilt101cyjgu1"
+path="res://.godot/imported/THE WORLD REVOLVING.mp3-4e4fb4e3a11d05eb01ed81b32836b596.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/THE WORLD REVOLVING.mp3"
+dest_files=["res://.godot/imported/THE WORLD REVOLVING.mp3-4e4fb4e3a11d05eb01ed81b32836b596.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

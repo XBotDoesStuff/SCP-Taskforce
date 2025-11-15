@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://kxqcj5vg42o2"]
 
-[ext_resource type="Script" uid="uid://bo12lqm3uacm1" path="res://global.gd" id="1_cj833"]
-[ext_resource type="AudioStream" uid="uid://b66up66dtb4em" path="res://Assets/Half Life 2 - Eli's Lab Alarm Sound Effect.mp3" id="2_g3avu"]
+[ext_resource type="Script" uid="uid://bo12lqm3uacm1" path="res://Scripts/global.gd" id="1_kdgo6"]
+[ext_resource type="AudioStream" uid="uid://b66up66dtb4em" path="res://Assets/Audio/Half Life 2 - Eli's Lab Alarm Sound Effect.mp3" id="2_ex480"]
 
 [node name="startscene" type="Control"]
 layout_mode = 3
@@ -10,7 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_cj833")
+script = ExtResource("1_kdgo6")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -21,5 +21,5 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_g3avu")
+stream = ExtResource("2_ex480")
 autoplay = true
