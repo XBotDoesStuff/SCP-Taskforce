@@ -26,4 +26,3 @@ proj_count = 1
 sprite = SubResource("SpriteFrames_a2r70")
 sprite_offset = Vector2(20, 0)
 muzzle_offset = Vector2(63, 21)
-metadata/_custom_type_script = "uid://dyrgfcpdi8xkp"

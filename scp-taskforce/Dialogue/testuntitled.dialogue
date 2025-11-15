@@ -9,5 +9,5 @@
 
 [speed=0.2]The last thing i remember was that giant explosion
 - wake up
-do global.change_scene("res://Scenes/test_floor.tscn")
+do global.change_scene("res://Scenes/Main Scenes/test_floor.tscn")
 => END

@@ -1,4 +1,3 @@
-@tool
 extends Node2D
 
 signal weapon_fired
@@ -8,7 +7,7 @@ signal reload_finished
 @export var stats : WeaponStats:
 	set(value):
 		stats = value
-		call_deferred("load_weapon_visuals")
+		#call_deferred("load_weapon_visuals")
 
 var can_fire : bool = true
 var reloading : bool = false

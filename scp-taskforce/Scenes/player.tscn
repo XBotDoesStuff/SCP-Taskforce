@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://cb7mpgj11eu2u" path="res://Assets/Sprites/MTF_PLAYER.png" id="2_cvnsp"]
-[ext_resource type="Script" path="res://Scripts/weapon.gd" id="3_6t5aa"]
+[ext_resource type="Script" uid="uid://byhcp6vxke4m2" path="res://Scripts/weapon.gd" id="3_6t5aa"]
 [ext_resource type="Resource" uid="uid://b3bmnil2ntdpa" path="res://Resources/Weapons/glock18.tres" id="4_vgqql"]
 [ext_resource type="Texture2D" uid="uid://cw2rqlq3natb" path="res://Assets/Sprites/glock18.png" id="5_fkybt"]
 [ext_resource type="Script" path="res://Scripts/weapon_hud.gd" id="6_x3wgy"]
@@ -33,6 +33,7 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
+z_index = 1
 position = Vector2(2, 0)
 script = ExtResource("1_cvnsp")
 
@@ -46,7 +47,6 @@ sprite_frames = SubResource("SpriteFrames_cdus1")
 offset = Vector2(3, 0)
 
 [node name="Weapon" type="Node2D" parent="."]
-z_index = -1
 script = ExtResource("3_6t5aa")
 stats = ExtResource("4_vgqql")
 
