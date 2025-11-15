@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://bfgan6dgo0pvo" path="res://Scenes/player.tscn" id="1_cxfwd"]
 [ext_resource type="Texture2D" uid="uid://cve8snfx1r5js" path="res://Assets/Sprites/tilemap.png" id="1_offgv"]
 [ext_resource type="PackedScene" uid="uid://5ej0ohblbbvj" path="res://Scenes/exit.tscn" id="3_oedmk"]
-[ext_resource type="AudioStream" uid="uid://t0hvb6g0l2sk" path="res://Assets/Audio/Hall Ambience.wav" id="4_y4dfj"]
 [ext_resource type="Texture2D" uid="uid://bqy15pt8prtf5" path="res://Assets/Sprites/129-1293392_table-pixel-art.png" id="4_y4dfj"]
 [ext_resource type="Texture2D" uid="uid://ccvr16q62ukwm" path="res://Assets/Sprites/mike-sobolev-6.jpg" id="5_fqj0v"]
 [ext_resource type="Texture2D" uid="uid://doha8i4i8r8nu" path="res://Assets/Sprites/p90.jpg" id="6_fn227"]
@@ -51,8 +50,8 @@ position = Vector2(1150, 476)
 rotation = 3.1415927
 
 [node name="Ambience" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_y4dfj")
 autoplay = true
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(1122, 475)
 rotation = -3.1415925

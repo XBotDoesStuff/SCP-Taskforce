@@ -13,6 +13,8 @@ signal overheat
 var can_fire : bool = true
 var reloading : bool = false
 
+var dry_fire = load("res://Assets/Audio/dry_fire.wav")
+
 var mag_size : int
 var current_ammo : int
 
@@ -26,6 +28,8 @@ func _process(delta: float) -> void:
 	if Input.is_action_pressed("primary_action"):
 		if can_fire and current_ammo > 0 and not reloading:
 			fire()
+		if current_ammo == 0 and not $DryFire.playing and not reloading:
+			$DryFire.play()
 	
 	if Input.is_action_just_pressed("reload") and stats.reload_time != -1:
 		if current_ammo < mag_size:

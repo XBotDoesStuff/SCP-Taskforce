@@ -1,11 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://bfgan6dgo0pvo"]
+[gd_scene load_steps=13 format=3 uid="uid://bfgan6dgo0pvo"]
 
 [ext_resource type="Script" uid="uid://ksv3dcph426a" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://cb7mpgj11eu2u" path="res://Assets/Sprites/MTF_PLAYER.png" id="2_cvnsp"]
 [ext_resource type="Script" uid="uid://byhcp6vxke4m2" path="res://Scripts/weapon.gd" id="3_6t5aa"]
-[ext_resource type="Resource" uid="uid://ceeu1jw3rqhsg" path="res://Resources/Weapons/scp127.tres" id="4_8erm5"]
+[ext_resource type="Resource" uid="uid://b3bmnil2ntdpa" path="res://Resources/Weapons/glock18.tres" id="4_f1ek2"]
 [ext_resource type="Texture2D" uid="uid://cw2rqlq3natb" path="res://Assets/Sprites/glock18.png" id="5_fkybt"]
-[ext_resource type="Script" path="res://Scripts/weapon_hud.gd" id="6_x3wgy"]
+[ext_resource type="AudioStream" uid="uid://crvg8fa75hwg1" path="res://Assets/Audio/dry_fire.wav" id="6_f1ek2"]
+[ext_resource type="Script" uid="uid://cb6mwpk0cs6rm" path="res://Scripts/weapon_hud.gd" id="6_x3wgy"]
 [ext_resource type="Script" uid="uid://c7tesqgv348nf" path="res://Components/health.gd" id="7_3smsa"]
 [ext_resource type="Script" uid="uid://bntb2sm358vkv" path="res://Components/hurtbox.gd" id="8_8erm5"]
 
@@ -48,7 +49,7 @@ shape = SubResource("CircleShape2D_cvnsp")
 
 [node name="Weapon" type="Node2D" parent="."]
 script = ExtResource("3_6t5aa")
-stats = ExtResource("4_8erm5")
+stats = ExtResource("4_f1ek2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Weapon"]
 scale = Vector2(0.75, 0.75)
@@ -68,6 +69,9 @@ one_shot = true
 [node name="ReloadSound" type="AudioStreamPlayer2D" parent="Weapon"]
 
 [node name="FireSound" type="AudioStreamPlayer2D" parent="Weapon"]
+
+[node name="DryFire" type="AudioStreamPlayer2D" parent="Weapon"]
+stream = ExtResource("6_f1ek2")
 
 [node name="WeaponHUD" type="Node2D" parent="."]
 top_level = true
