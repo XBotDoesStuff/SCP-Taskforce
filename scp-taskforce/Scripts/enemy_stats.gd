@@ -5,3 +5,5 @@ extends Resource
 @export var speed : float
 @export var sprite : SpriteFrames
 @export var atk_range : float
+@export var atk_rate : float
+@export var damage : float

@@ -9,6 +9,9 @@ func _ready() -> void:
 	connect("area_entered", _on_area_entered)
 
 func _on_area_entered(hitbox : Hitbox):
-	health.health -= hitbox.damage
-	recieved_damage.emit(hitbox.damage)
-	print(str(hitbox.damage))
+	print("collision")
+	take_damage(hitbox.damage)
+
+func take_damage(damage):
+	health.health -= damage
+	recieved_damage.emit(damage)

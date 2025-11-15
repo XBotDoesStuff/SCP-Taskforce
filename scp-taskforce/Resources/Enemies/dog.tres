@@ -9,4 +9,6 @@ health = 100.0
 speed = 200.0
 sprite = ExtResource("2_k63yh")
 atk_range = 100.0
+atk_rate = 1.0
+damage = 10.0
 metadata/_custom_type_script = "uid://vaiktrot7t0y"

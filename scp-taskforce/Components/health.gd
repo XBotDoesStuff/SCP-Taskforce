@@ -25,5 +25,5 @@ func set_health(value : float):
 		health = clamped_value
 		health_changed.emit(diff)
 		
-		if health == 0:
+		if health <= 0:
 			health_depleted.emit()

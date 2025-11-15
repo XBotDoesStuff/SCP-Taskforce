@@ -20,7 +20,7 @@ animations = [{
 [resource]
 script = ExtResource("1_wwf1i")
 fire_rate = 0.15
-damage = 5.0
+damage = 20.0
 mag_size = 18
 spread = 5.0
 proj_scene = ExtResource("1_a2r70")

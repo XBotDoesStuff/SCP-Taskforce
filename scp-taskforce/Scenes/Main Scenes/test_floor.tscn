@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://oceyoc3gj7a6"]
+[gd_scene load_steps=14 format=4 uid="uid://oceyoc3gj7a6"]
 
 [ext_resource type="PackedScene" uid="uid://bfgan6dgo0pvo" path="res://Scenes/player.tscn" id="1_cxfwd"]
 [ext_resource type="Texture2D" uid="uid://cve8snfx1r5js" path="res://Assets/Sprites/tilemap.png" id="1_offgv"]
@@ -8,11 +8,7 @@
 [ext_resource type="Script" uid="uid://carl4mr6dne1u" path="res://Scripts/equippable.gd" id="5_fn227"]
 [ext_resource type="Resource" uid="uid://chew8v3bwnl6w" path="res://Resources/Equippables/scp127.tres" id="6_fqj0v"]
 [ext_resource type="Texture2D" uid="uid://cjsxofpt1k6vk" path="res://Assets/Sprites/scp127_equippable.png" id="7_fqj0v"]
-[ext_resource type="Script" uid="uid://dbok1sjchge28" path="res://Scripts/enemy.gd" id="9_mrldv"]
-[ext_resource type="Resource" uid="uid://dxusxsygr2dl3" path="res://Resources/Enemies/dog.tres" id="10_dtm1e"]
-[ext_resource type="Script" uid="uid://c7tesqgv348nf" path="res://Components/health.gd" id="10_hktk6"]
-[ext_resource type="SpriteFrames" uid="uid://drysy0obwj64q" path="res://Resources/animations/dog_anim.tres" id="10_kc1b1"]
-[ext_resource type="Script" uid="uid://bntb2sm358vkv" path="res://Components/hurtbox.gd" id="11_kc1b1"]
+[ext_resource type="PackedScene" uid="uid://bg1k4kbqniktx" path="res://Scenes/dog.tscn" id="9_ex7dg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oedmk"]
 texture = ExtResource("1_offgv")
@@ -34,9 +30,8 @@ sources/0 = SubResource("TileSetAtlasSource_oedmk")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ketvh"]
 size = Vector2(80.02475, 14.529297)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_juli2"]
-radius = 11.0
-height = 77.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_ex7dg"]
+radius = 50.0
 
 [node name="TestFloor" type="Node2D"]
 metadata/_edit_vertical_guides_ = [160.0]
@@ -93,37 +88,7 @@ rotation = 3.1311002
 scale = Vector2(2.8423877, 2.8620262)
 target_position = Vector2(-0.47987366, 45.41987)
 
-[node name="Enemy" type="CharacterBody2D" parent="." groups=["Enemy"]]
-position = Vector2(729, 424)
-collision_mask = 0
-script = ExtResource("9_mrldv")
-stats = ExtResource("10_dtm1e")
-metadata/_custom_type_script = "uid://dbok1sjchge28"
-metadata/_edit_group_ = true
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy"]
-scale = Vector2(1.5, 1.5)
-sprite_frames = ExtResource("10_kc1b1")
-animation = &"dog_run"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
-position = Vector2(-4, 0)
-rotation = -1.5707964
-shape = SubResource("CapsuleShape2D_juli2")
-
-[node name="Health" type="Node" parent="Enemy"]
-script = ExtResource("10_hktk6")
-metadata/_custom_type_script = "uid://c7tesqgv348nf"
-
-[node name="Hurtbox" type="Area2D" parent="Enemy" node_paths=PackedStringArray("health")]
-script = ExtResource("11_kc1b1")
-health = NodePath("../Health")
-metadata/_custom_type_script = "uid://bntb2sm358vkv"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy/Hurtbox"]
-position = Vector2(-4, 0)
-rotation = 1.5707964
-shape = SubResource("CapsuleShape2D_juli2")
-
-[connection signal="health_depleted" from="Enemy/Health" to="Enemy" method="_on_health_health_depleted"]
-[connection signal="area_entered" from="Enemy/Hurtbox" to="Enemy/Hurtbox" method="_on_area_entered"]
+[node name="Enemy" parent="." instance=ExtResource("9_ex7dg")]
+position = Vector2(1003, 350)
+collision_mask = 2
+hitbox_shape = SubResource("CircleShape2D_ex7dg")

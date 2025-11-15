@@ -2,6 +2,7 @@ class_name Player
 extends CharacterBody2D
 
 @export var speed = 400.0
+@export var max_hp = 100
 signal game_over
 
 func get_input():
@@ -19,7 +20,7 @@ func _on_health_health_depleted() -> void:
 	queue_free()
 
 func _ready() -> void:
-	$Health.set_max_health(-400)
+	$Health.set_max_health(max_hp)
 	print($Health.max_health)
 
 func equip_weapon(weapon : WeaponInstance):

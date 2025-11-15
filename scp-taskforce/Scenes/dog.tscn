@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=3 uid="uid://bg1k4kbqniktx"]
+
+[ext_resource type="Script" uid="uid://dbok1sjchge28" path="res://Scripts/enemy.gd" id="1_6yb15"]
+[ext_resource type="Resource" uid="uid://dxusxsygr2dl3" path="res://Resources/Enemies/dog.tres" id="2_usue5"]
+[ext_resource type="SpriteFrames" uid="uid://drysy0obwj64q" path="res://Resources/animations/dog_anim.tres" id="3_12smy"]
+[ext_resource type="Script" uid="uid://c7tesqgv348nf" path="res://Components/health.gd" id="4_wkkfr"]
+[ext_resource type="Script" uid="uid://bntb2sm358vkv" path="res://Components/hurtbox.gd" id="5_2qe13"]
+[ext_resource type="Script" uid="uid://cfla8nnfrrvns" path="res://Scenes/melee_hitbox.gd" id="6_usue5"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_juli2"]
+radius = 11.0
+height = 77.0
+
+[node name="Enemy" type="CharacterBody2D" groups=["Enemy"]]
+collision_mask = 0
+script = ExtResource("1_6yb15")
+stats = ExtResource("2_usue5")
+metadata/_custom_type_script = "uid://dbok1sjchge28"
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
+sprite_frames = ExtResource("3_12smy")
+animation = &"dog_run"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4, 0)
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_juli2")
+
+[node name="Health" type="Node" parent="."]
+script = ExtResource("4_wkkfr")
+metadata/_custom_type_script = "uid://c7tesqgv348nf"
+
+[node name="Hurtbox" type="Area2D" parent="." node_paths=PackedStringArray("health")]
+script = ExtResource("5_2qe13")
+health = NodePath("../Health")
+metadata/_custom_type_script = "uid://bntb2sm358vkv"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(-4, 0)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_juli2")
+
+[node name="Hitbox" type="Area2D" parent="."]
+position = Vector2(176, 0)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("6_usue5")
+metadata/_custom_type_script = "uid://bbapww841rbn2"
+
+[node name="BiteCooldown" type="Timer" parent="."]
+one_shot = true
+
+[node name="Muzzle" type="Marker2D" parent="."]
+position = Vector2(50, 0)
+
+[connection signal="health_depleted" from="Health" to="." method="_on_health_health_depleted"]
+[connection signal="area_entered" from="Hurtbox" to="Hurtbox" method="_on_area_entered"]
+[connection signal="timeout" from="BiteCooldown" to="." method="_on_bite_cooldown_timeout"]
