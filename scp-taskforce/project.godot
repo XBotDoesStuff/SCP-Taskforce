@@ -23,7 +23,6 @@ buses/default_bus_layout="res://Resources/default_bus_layout.tres"
 
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 global="*res://Scripts/global.gd"
-GlobalPlayerData="*res://Scripts/global_player_data.gd"
 
 [display]
 
