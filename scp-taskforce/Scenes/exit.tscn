@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://5ej0ohblbbvj"]
+
+[ext_resource type="Script" uid="uid://dr6wx7wifxgcj" path="res://Scripts/exitdoor.gd" id="1_ljsmn"]
+[ext_resource type="Texture2D" uid="uid://b1so75kbxfxsu" path="res://Assets/Sprites/exit_test.png" id="2_650lm"]
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_at0gc"]
+points = PackedVector2Array(-28.100418, 10.809525, -28.90329, -6.387436, 16.86026, -11.300842, 16.057394, -26.53244, 41.749207, -28.49781, 41.7492, 11.792213)
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_fqj0v"]
+points = PackedVector2Array(50, 32, 46, -21, -2, -33, -5, -74, -33, -81, -33, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fn227"]
+size = Vector2(31, 68)
+
+[node name="Exit" type="StaticBody2D"]
+script = ExtResource("1_ljsmn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(75.719, 127)
+rotation = 3.1415925
+scale = Vector2(1.245533, 2.0352437)
+texture = ExtResource("2_650lm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(47.000004, 20.000015)
+rotation = 3.1415925
+scale = Vector2(1.245533, 2.0352437)
+shape = SubResource("ConvexPolygonShape2D_at0gc")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(30, 225)
+shape = SubResource("ConvexPolygonShape2D_fqj0v")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="ExitDoor" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(12, 111)
+shape = SubResource("RectangleShape2D_fn227")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

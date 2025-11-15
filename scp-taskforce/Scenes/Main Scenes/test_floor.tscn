@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=4 uid="uid://oceyoc3gj7a6"]
+[gd_scene load_steps=6 format=4 uid="uid://oceyoc3gj7a6"]
 
 [ext_resource type="PackedScene" uid="uid://bfgan6dgo0pvo" path="res://Scenes/player.tscn" id="1_cxfwd"]
 [ext_resource type="Texture2D" uid="uid://cve8snfx1r5js" path="res://Assets/Sprites/tilemap.png" id="1_offgv"]
+[ext_resource type="PackedScene" uid="uid://5ej0ohblbbvj" path="res://Scenes/exit.tscn" id="3_oedmk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oedmk"]
 texture = ExtResource("1_offgv")
@@ -27,3 +28,12 @@ tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAABAAEAAAAAAAA
 tile_set = SubResource("TileSet_selds")
 
 [node name="Player" parent="." instance=ExtResource("1_cxfwd")]
+position = Vector2(258, 310)
+
+[node name="Exit" parent="." instance=ExtResource("3_oedmk")]
+position = Vector2(6, 225)
+destination_scene = "res://Scenes/Main Scenes/main_menu.tscn"
+
+[node name="Exit2" parent="." instance=ExtResource("3_oedmk")]
+position = Vector2(1150, 476)
+rotation = 3.1415927
