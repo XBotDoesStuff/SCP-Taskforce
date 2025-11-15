@@ -18,6 +18,9 @@ func _physics_process(delta: float) -> void:
 func on_timeout():
 	queue_free()
 
-
 func _on_hitbox_entered_hurtbox() -> void:
 	queue_free()
+
+func _on_area_entered(area: Area2D) -> void:
+	if not area.is_in_group("Player") and not area.is_in_group("Enemy") and not area.is_class("Hitbox"):
+		queue_free()

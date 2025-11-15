@@ -19,9 +19,10 @@ func _ready() -> void:
 	$AnimatedSprite2D.sprite_frames = stats.sprite
 	change_state(State.DOG_RUN)
 	$BiteCooldown.wait_time = stats.atk_rate
+	
+	player = get_tree().get_first_node_in_group("Player")
 
 func _physics_process(delta: float) -> void:
-	player = %Player
 	if player:
 		var player_dir = position.direction_to(player.position)
 		if position.distance_to(player.position) > stats.atk_range:
@@ -38,6 +39,8 @@ func _physics_process(delta: float) -> void:
 				$BiteCooldown.start()
 		look_at(player.position)
 		move_and_slide()
+	else:
+		print("CANNOT FIND PLAYER!!!")
 
 func change_state(state : State):
 	if state == State.DOG_RUN:

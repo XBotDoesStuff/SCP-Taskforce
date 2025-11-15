@@ -7,7 +7,7 @@ signal health_depleted()
 
 @export var max_health : float = 100 : set = set_max_health
 
-@onready var health = max_health : set = set_health
+@onready var health = max_health : set = set_health, get = get_health
 
 func set_max_health(value : float):
 	var clamped_value = 1 if value <= 0 else value
@@ -27,3 +27,6 @@ func set_health(value : float):
 		
 		if health <= 0:
 			health_depleted.emit()
+
+func get_health():
+	return health

@@ -5,10 +5,11 @@
 [ext_resource type="PackedScene" uid="uid://5ej0ohblbbvj" path="res://Scenes/exit.tscn" id="3_oedmk"]
 [ext_resource type="AudioStream" uid="uid://t0hvb6g0l2sk" path="res://Assets/Audio/Hall Ambience.wav" id="4_fn227"]
 [ext_resource type="Texture2D" uid="uid://bqy15pt8prtf5" path="res://Assets/Sprites/129-1293392_table-pixel-art.png" id="4_y4dfj"]
-[ext_resource type="Script" path="res://Scripts/equippable.gd" id="5_fn227"]
+[ext_resource type="Script" uid="uid://carl4mr6dne1u" path="res://Scripts/equippable.gd" id="5_fn227"]
 [ext_resource type="Resource" uid="uid://chew8v3bwnl6w" path="res://Resources/Equippables/scp127.tres" id="6_fqj0v"]
 [ext_resource type="Texture2D" uid="uid://cjsxofpt1k6vk" path="res://Assets/Sprites/scp127_equippable.png" id="7_fqj0v"]
 [ext_resource type="PackedScene" uid="uid://bg1k4kbqniktx" path="res://Scenes/dog.tscn" id="9_ex7dg"]
+[ext_resource type="Shape2D" uid="uid://cb86eonr1xe8p" path="res://Resources/dog_hit_circle.tres" id="10_bqfo3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oedmk"]
 texture = ExtResource("1_offgv")
@@ -33,9 +34,6 @@ sources/0 = SubResource("TileSetAtlasSource_oedmk")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ketvh"]
 size = Vector2(80.02475, 14.529297)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_ex7dg"]
-radius = 50.0
 
 [node name="TestFloor" type="Node2D"]
 metadata/_edit_vertical_guides_ = [160.0]
@@ -95,4 +93,4 @@ target_position = Vector2(-0.47987366, 45.41987)
 [node name="Enemy" parent="." instance=ExtResource("9_ex7dg")]
 position = Vector2(1003, 350)
 collision_mask = 2
-hitbox_shape = SubResource("CircleShape2D_ex7dg")
+hitbox_shape = ExtResource("10_bqfo3")

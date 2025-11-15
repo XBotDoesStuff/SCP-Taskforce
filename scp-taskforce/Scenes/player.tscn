@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bfgan6dgo0pvo"]
+[gd_scene load_steps=14 format=3 uid="uid://bfgan6dgo0pvo"]
 
 [ext_resource type="Script" uid="uid://ksv3dcph426a" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://cb7mpgj11eu2u" path="res://Assets/Sprites/MTF_PLAYER.png" id="2_cvnsp"]
@@ -34,6 +34,9 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f1ek2"]
+bg_color = Color(0.9529412, 0, 0, 0.7019608)
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 z_index = 1
@@ -80,22 +83,22 @@ top_level = true
 script = ExtResource("6_x3wgy")
 
 [node name="Ammo" type="Label" parent="WeaponHUD"]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -57.5
-offset_top = -63.0
-offset_right = 57.5
-offset_bottom = -40.0
-grow_horizontal = 2
-grow_vertical = 0
+offset_left = -55.0
+offset_top = -102.0
+offset_right = 7.0
+offset_bottom = -79.0
 size_flags_horizontal = 4
 text = "AMMO: "
-horizontal_alignment = 1
 vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
+
+[node name="HealthBar" type="ProgressBar" parent="WeaponHUD"]
+offset_left = -54.0
+offset_top = 53.0
+offset_right = 52.0
+offset_bottom = 63.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_f1ek2")
+value = 100.0
+show_percentage = false
 
 [node name="This is so spaghetti coded" type="RemoteTransform2D" parent="."]
 remote_path = NodePath("../WeaponHUD")
@@ -124,4 +127,5 @@ shape = SubResource("CircleShape2D_cvnsp")
 [connection signal="timeout" from="Weapon/FireRate" to="Weapon" method="_on_fire_rate_timeout"]
 [connection signal="timeout" from="Weapon/Reload" to="Weapon" method="_on_reload_timeout"]
 [connection signal="timeout" from="Weapon/Refill" to="Weapon" method="_on_refill_timeout"]
+[connection signal="health_changed" from="Health" to="WeaponHUD" method="_on_health_changed"]
 [connection signal="health_depleted" from="Health" to="." method="_on_health_health_depleted"]
