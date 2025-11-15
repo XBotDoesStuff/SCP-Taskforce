@@ -8,6 +8,7 @@ var state : State = State.DOG_RUN
 @export var stats : EnemyStats
 var can_bite = true
 @export var hitbox_shape : Shape2D
+var points_for_kill = 100
 
 var health = 100
 
@@ -56,6 +57,7 @@ dog is now queue_free()
 
 
 func _on_health_health_depleted() -> void:
+	global.current_score += points_for_kill
 	queue_free()
 
 
