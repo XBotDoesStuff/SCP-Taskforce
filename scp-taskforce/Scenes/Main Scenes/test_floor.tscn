@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=4 uid="uid://oceyoc3gj7a6"]
+[gd_scene load_steps=7 format=4 uid="uid://oceyoc3gj7a6"]
 
 [ext_resource type="PackedScene" uid="uid://bfgan6dgo0pvo" path="res://Scenes/player.tscn" id="1_cxfwd"]
 [ext_resource type="Texture2D" uid="uid://cve8snfx1r5js" path="res://Assets/Sprites/tilemap.png" id="1_offgv"]
 [ext_resource type="PackedScene" uid="uid://5ej0ohblbbvj" path="res://Scenes/exit.tscn" id="3_oedmk"]
+[ext_resource type="AudioStream" uid="uid://t0hvb6g0l2sk" path="res://Assets/Audio/Hall Ambience.wav" id="4_y4dfj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oedmk"]
 texture = ExtResource("1_offgv")
@@ -31,9 +32,13 @@ tile_set = SubResource("TileSet_selds")
 position = Vector2(258, 310)
 
 [node name="Exit" parent="." instance=ExtResource("3_oedmk")]
-position = Vector2(6, 225)
+position = Vector2(2, 225)
 destination_scene = "res://Scenes/Main Scenes/main_menu.tscn"
 
 [node name="Exit2" parent="." instance=ExtResource("3_oedmk")]
 position = Vector2(1150, 476)
 rotation = 3.1415927
+
+[node name="Ambience" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_y4dfj")
+autoplay = true

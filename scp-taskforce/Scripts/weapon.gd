@@ -3,6 +3,7 @@ extends Node2D
 signal weapon_fired
 signal weapon_reload
 signal reload_finished
+signal overheat
 
 @export var stats : WeaponStats:
 	set(value):
@@ -26,7 +27,7 @@ func _process(delta: float) -> void:
 		if can_fire and current_ammo > 0 and not reloading:
 			fire()
 	
-	if Input.is_action_just_pressed("reload"):
+	if Input.is_action_just_pressed("reload") and stats.reload_time != -1:
 		if current_ammo < mag_size:
 			reload()
 
@@ -67,6 +68,14 @@ func load_weapon_stats():
 	current_ammo = mag_size
 	$ReloadSound.stream = stats.reload_sound
 	$FireSound.stream = stats.fire_sound
+	
+	if stats.refill_rate:
+		var refill_timer = Timer.new()
+		refill_timer.wait_time = stats.refill_rate
+		refill_timer.autostart = true
+		refill_timer.one_shot = false
+		add_child(refill_timer)
+		refill_timer.connect("timeout", _on_refill_timeout)
 
 func _on_fire_rate_timeout() -> void:
 	can_fire = true
@@ -75,3 +84,9 @@ func _on_reload_timeout() -> void:
 	current_ammo = mag_size
 	reloading = false
 	emit_signal("reload_finished")
+
+# ---------- SPECIAL FUNCTIONS FOR SPECIAL WEAPONS ----------
+func _on_refill_timeout():
+	if can_fire:
+		current_ammo = clamp(current_ammo + stats.refill_count, 0, mag_size)
+		emit_signal("weapon_fired")
