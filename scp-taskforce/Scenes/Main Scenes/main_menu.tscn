@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bylp3g1a3lxc6" path="res://Scripts/main_menu.gd" id="1_n45e2"]
 [ext_resource type="Texture2D" uid="uid://cw86kqehi2mkm" path="res://Assets/Sprites/backgroundimg.png" id="2_opfnp"]
 [ext_resource type="AudioStream" uid="uid://bd5nuxex0r2md" path="res://Assets/Audio/Luigi Scream.mp3" id="3_cp0ys"]
-[ext_resource type="AudioStream" uid="uid://bilt101cyjgu1" path="res://Assets/Audio/THE WORLD REVOLVING.mp3" id="4_yhxw7"]
+[ext_resource type="AudioStream" uid="uid://doisc0fns6eb5" path="res://Assets/Audio/Main Menu Theme.mp3" id="4_vyyix"]
 [ext_resource type="Script" uid="uid://d2gok5i08rkx2" path="res://Scripts/audio_controll.gd" id="5_trj04"]
 [ext_resource type="Script" uid="uid://binfeuwcqo55r" path="res://Scripts/fullscreen_control.gd" id="6_opfnp"]
 
@@ -132,7 +132,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_yhxw7")
+stream = ExtResource("4_vyyix")
 autoplay = true
 bus = &"Music"
 
