@@ -22,6 +22,8 @@ func _on_body_entered(body: Node2D) -> void:
 	elif body.is_in_group("Enemy"):
 		if friendly:
 			queue_free()
+	else:
+		queue_free()
 
 func on_timeout():
 	queue_free()

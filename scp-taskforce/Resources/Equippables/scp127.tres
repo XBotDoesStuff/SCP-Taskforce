@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="EquippableData" load_steps=4 format=3 uid="uid://chew8v3bwnl6w"]
+
+[ext_resource type="Script" uid="uid://4x6ddylofxtu" path="res://Scripts/equippable_data.gd" id="1_4u1sk"]
+[ext_resource type="Texture2D" uid="uid://cjsxofpt1k6vk" path="res://Assets/Sprites/scp127_equippable.png" id="2_4u1sk"]
+[ext_resource type="Resource" uid="uid://ceeu1jw3rqhsg" path="res://Resources/Weapons/scp127.tres" id="3_c722m"]
+
+[resource]
+script = ExtResource("1_4u1sk")
+sprite = ExtResource("2_4u1sk")
+weapon = ExtResource("3_c722m")
+scale = Vector2(1, 1)
+metadata/_custom_type_script = "uid://4x6ddylofxtu"

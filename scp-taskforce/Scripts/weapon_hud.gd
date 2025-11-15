@@ -7,7 +7,7 @@ func _ready() -> void:
 	update_ammo()
 
 func update_ammo():
-	$Ammo.text = "AMMO: " + str(weapon.current_ammo) + "/" + str(weapon.mag_size)
+	$Ammo.text = "AMMO: " + str(weapon.current_ammo) + "/" + str(weapon.stats.mag_size)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -20,4 +20,7 @@ func _on_weapon_weapon_reload() -> void:
 	$Ammo.text = "RELOADING"
 
 func _on_weapon_reload_finished() -> void:
+	update_ammo()
+
+func _on_weapon_refresh_ammo_stat() -> void:
 	update_ammo()

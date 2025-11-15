@@ -73,6 +73,8 @@ one_shot = true
 [node name="DryFire" type="AudioStreamPlayer2D" parent="Weapon"]
 stream = ExtResource("6_f1ek2")
 
+[node name="Refill" type="Timer" parent="Weapon"]
+
 [node name="WeaponHUD" type="Node2D" parent="."]
 top_level = true
 script = ExtResource("6_x3wgy")
@@ -111,12 +113,13 @@ metadata/_custom_type_script = "uid://bntb2sm358vkv"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
 shape = SubResource("CircleShape2D_cvnsp")
 
-[node name="RayCast2D" type="RayCast2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="."]
 
-[connection signal="overheat" from="Weapon" to="WeaponHUD" method="_on_weapon_overheat"]
+[connection signal="refresh_ammo_stat" from="Weapon" to="WeaponHUD" method="_on_weapon_refresh_ammo_stat"]
 [connection signal="reload_finished" from="Weapon" to="WeaponHUD" method="_on_weapon_reload_finished"]
 [connection signal="weapon_fired" from="Weapon" to="WeaponHUD" method="_on_weapon_weapon_fired"]
 [connection signal="weapon_reload" from="Weapon" to="WeaponHUD" method="_on_weapon_weapon_reload"]
 [connection signal="timeout" from="Weapon/FireRate" to="Weapon" method="_on_fire_rate_timeout"]
 [connection signal="timeout" from="Weapon/Reload" to="Weapon" method="_on_reload_timeout"]
+[connection signal="timeout" from="Weapon/Refill" to="Weapon" method="_on_refill_timeout"]
 [connection signal="health_depleted" from="Health" to="." method="_on_health_health_depleted"]

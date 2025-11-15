@@ -1,9 +1,8 @@
-[gd_scene load_steps=12 format=4 uid="uid://oceyoc3gj7a6"]
+[gd_scene load_steps=11 format=4 uid="uid://oceyoc3gj7a6"]
 
 [ext_resource type="PackedScene" uid="uid://bfgan6dgo0pvo" path="res://Scenes/player.tscn" id="1_cxfwd"]
 [ext_resource type="Texture2D" uid="uid://cve8snfx1r5js" path="res://Assets/Sprites/tilemap.png" id="1_offgv"]
 [ext_resource type="PackedScene" uid="uid://5ej0ohblbbvj" path="res://Scenes/exit.tscn" id="3_oedmk"]
-[ext_resource type="AudioStream" uid="uid://t0hvb6g0l2sk" path="res://Assets/Audio/Hall Ambience.wav" id="4_fn227"]
 [ext_resource type="Texture2D" uid="uid://bqy15pt8prtf5" path="res://Assets/Sprites/129-1293392_table-pixel-art.png" id="4_y4dfj"]
 [ext_resource type="Script" uid="uid://carl4mr6dne1u" path="res://Scripts/equippable.gd" id="5_fn227"]
 [ext_resource type="Resource" uid="uid://chew8v3bwnl6w" path="res://Resources/Equippables/scp127.tres" id="6_fqj0v"]
@@ -49,7 +48,6 @@ position = Vector2(1150, 476)
 rotation = 3.1415927
 
 [node name="Ambience" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_fn227")
 autoplay = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]

@@ -1,3 +1,4 @@
+class_name Player
 extends CharacterBody2D
 
 @export var speed = 400.0
@@ -20,3 +21,8 @@ func _on_health_health_depleted() -> void:
 func _ready() -> void:
 	$Health.set_max_health(-400)
 	print($Health.max_health)
+
+func equip_weapon(weapon : WeaponInstance):
+	if not weapon in $Weapon.weapon_inv:
+		$Weapon.weapon_inv.append(weapon)
+		print(str($Weapon.weapon_inv))
