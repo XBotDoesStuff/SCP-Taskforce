@@ -13,7 +13,9 @@ extends Resource
 @export var proj_scene : PackedScene
 @export var proj_count : int
 
-@export_category("Visuals")
+@export_category("Visual/Audio")
 @export var sprite : SpriteFrames
 @export var sprite_offset : Vector2
 @export var muzzle_offset : Vector2
+@export var reload_sound : AudioStream
+@export var fire_sound : AudioStream

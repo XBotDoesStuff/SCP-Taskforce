@@ -58,10 +58,15 @@ offset = Vector2(20, 0)
 position = Vector2(63, 21)
 
 [node name="FireRate" type="Timer" parent="Weapon"]
+wait_time = 0.01
 one_shot = true
 
 [node name="Reload" type="Timer" parent="Weapon"]
 one_shot = true
+
+[node name="ReloadSound" type="AudioStreamPlayer2D" parent="Weapon"]
+
+[node name="FireSound" type="AudioStreamPlayer2D" parent="Weapon"]
 
 [node name="WeaponHUD" type="Node2D" parent="."]
 top_level = true

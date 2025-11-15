@@ -42,12 +42,17 @@ func fire():
 	can_fire = false
 	current_ammo -= 1
 	emit_signal("weapon_fired")
+	
+	if stats.fire_sound:
+		$FireSound.play(0)
 
 func reload():
 	$Reload.start()
 	current_ammo = 0
 	reloading = true
 	emit_signal("weapon_reload")
+	if stats.reload_sound:
+		$ReloadSound.play()
 
 func load_weapon_visuals():
 	$AnimatedSprite2D.sprite_frames = stats.sprite
@@ -59,6 +64,8 @@ func load_weapon_stats():
 	$FireRate.wait_time = stats.fire_rate
 	mag_size = stats.mag_size
 	current_ammo = mag_size
+	$ReloadSound.stream = stats.reload_sound
+	$FireSound.stream = stats.fire_sound
 
 func _on_fire_rate_timeout() -> void:
 	can_fire = true
