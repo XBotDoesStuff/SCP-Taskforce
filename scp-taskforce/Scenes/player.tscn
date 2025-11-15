@@ -5,11 +5,8 @@
 [ext_resource type="Script" uid="uid://byhcp6vxke4m2" path="res://Scripts/weapon.gd" id="3_6t5aa"]
 [ext_resource type="Resource" uid="uid://b3bmnil2ntdpa" path="res://Resources/Weapons/glock18.tres" id="4_vgqql"]
 [ext_resource type="Texture2D" uid="uid://cw2rqlq3natb" path="res://Assets/Sprites/glock18.png" id="5_fkybt"]
-[ext_resource type="Script" uid="uid://cb6mwpk0cs6rm" path="res://Scripts/weapon_hud.gd" id="6_x3wgy"]
+[ext_resource type="Script" path="res://Scripts/weapon_hud.gd" id="6_x3wgy"]
 [ext_resource type="Script" uid="uid://c7tesqgv348nf" path="res://Components/health.gd" id="7_3smsa"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_cvnsp"]
-radius = 21.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cdus1"]
 animations = [{
@@ -21,6 +18,9 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cvnsp"]
+radius = 21.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_a2r70"]
 animations = [{
@@ -37,14 +37,13 @@ animations = [{
 z_index = 1
 script = ExtResource("1_cvnsp")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-top_level = true
-shape = SubResource("CircleShape2D_cvnsp")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_cdus1")
 offset = Vector2(3, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_cvnsp")
 
 [node name="Weapon" type="Node2D" parent="."]
 script = ExtResource("3_6t5aa")
