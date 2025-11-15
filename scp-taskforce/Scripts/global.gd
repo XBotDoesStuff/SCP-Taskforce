@@ -31,3 +31,6 @@ func load_player_data():
 	player.set_current_hp(saved_health)
 	player.equip_weapon(saved_equipped_weapon)
 	player.set_weapon_inv(saved_weapon_inv)
+var high_score = 0
+var current_score: int
+var previous_score: int

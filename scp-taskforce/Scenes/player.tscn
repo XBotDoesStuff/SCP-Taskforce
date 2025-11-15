@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bfgan6dgo0pvo"]
+[gd_scene load_steps=15 format=3 uid="uid://bfgan6dgo0pvo"]
 
 [ext_resource type="Script" uid="uid://ksv3dcph426a" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://cb7mpgj11eu2u" path="res://Assets/Sprites/MTF_PLAYER.png" id="2_cvnsp"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://cb6mwpk0cs6rm" path="res://Scripts/weapon_hud.gd" id="6_x3wgy"]
 [ext_resource type="Script" uid="uid://c7tesqgv348nf" path="res://Components/health.gd" id="7_3smsa"]
 [ext_resource type="Script" uid="uid://bntb2sm358vkv" path="res://Components/hurtbox.gd" id="8_8erm5"]
+[ext_resource type="Script" uid="uid://dgjvl7e3wp1lv" path="res://Scenes/current_score_label.gd" id="10_tx1dd"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cdus1"]
 animations = [{
@@ -81,6 +82,17 @@ stream = ExtResource("6_f1ek2")
 [node name="WeaponHUD" type="Node2D" parent="."]
 top_level = true
 script = ExtResource("6_x3wgy")
+
+[node name="ScoreLables" type="StaticBody2D" parent="WeaponHUD"]
+
+[node name="CurrentScoreLabel" type="RichTextLabel" parent="WeaponHUD/ScoreLables"]
+offset_left = -574.0
+offset_top = 284.0
+offset_right = -351.0
+offset_bottom = 324.0
+text = "Current Score: 9999"
+script = ExtResource("10_tx1dd")
+metadata/_edit_use_anchors_ = true
 
 [node name="Ammo" type="Label" parent="WeaponHUD"]
 offset_left = -55.0
