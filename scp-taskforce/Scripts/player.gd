@@ -26,8 +26,6 @@ func _ready() -> void:
 		$Health.health = global.saved_health
 	else:
 		$Health.health = max_hp
-	if global.saved_equipped_weapon:
-		equip_weapon(global.saved_equipped_weapon)
 	if global.saved_weapon_inv:
 		$Weapon.weapon_inv = global.saved_weapon_inv
 

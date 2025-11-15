@@ -25,7 +25,10 @@ var current_ammo : int
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	equipped_weapon = WeaponInstance.new(stats)
+	if global.saved_equipped_weapon:
+		equipped_weapon = global.saved_equipped_weapon
+	else:
+		equipped_weapon = WeaponInstance.new(stats)
 	print(str(equipped_weapon))
 	load_weapon_visuals()
 	load_weapon_stats()
