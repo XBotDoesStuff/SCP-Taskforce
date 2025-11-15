@@ -9,6 +9,6 @@ func _ready() -> void:
 	connect("area_entered", _on_area_entered)
 
 func _on_area_entered(hitbox : Hitbox):
-	if hitbox != null:
-		health.health -= hitbox.damage
-		recieved_damage.emit(hitbox.damage)
+	health.health -= hitbox.damage
+	recieved_damage.emit(hitbox.damage)
+	print(str(hitbox.damage))

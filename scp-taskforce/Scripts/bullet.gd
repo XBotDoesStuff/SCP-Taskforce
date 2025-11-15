@@ -15,15 +15,9 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	position += transform.x * speed * delta
 
-func _on_body_entered(body: Node2D) -> void:
-	if body.is_in_group("Player"):
-		if not friendly:
-			queue_free()
-	elif body.is_in_group("Enemy"):
-		if friendly:
-			queue_free()
-	else:
-		queue_free()
-
 func on_timeout():
+	queue_free()
+
+
+func _on_hitbox_entered_hurtbox() -> void:
 	queue_free()

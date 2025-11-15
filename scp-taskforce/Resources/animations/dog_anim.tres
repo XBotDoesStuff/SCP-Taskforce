@@ -1,0 +1,66 @@
+[gd_resource type="SpriteFrames" load_steps=10 format=3 uid="uid://drysy0obwj64q"]
+
+[ext_resource type="Texture2D" uid="uid://x50qvm6tpwci" path="res://Assets/Sprites/dog_idle.png" id="1_fgjpv"]
+[ext_resource type="Texture2D" uid="uid://cfnboniywp8dq" path="res://Assets/Sprites/dog_run.png" id="2_k6ov5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gipgv"]
+atlas = ExtResource("1_fgjpv")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g46nk"]
+atlas = ExtResource("1_fgjpv")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hwakd"]
+atlas = ExtResource("1_fgjpv")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pds77"]
+atlas = ExtResource("1_fgjpv")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t586j"]
+atlas = ExtResource("2_k6ov5")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hbvkh"]
+atlas = ExtResource("2_k6ov5")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dv3xn"]
+atlas = ExtResource("2_k6ov5")
+region = Rect2(128, 0, 64, 64)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gipgv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g46nk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hwakd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pds77")
+}],
+"loop": true,
+"name": &"dog_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t586j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hbvkh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dv3xn")
+}],
+"loop": true,
+"name": &"dog_run",
+"speed": 5.0
+}]
