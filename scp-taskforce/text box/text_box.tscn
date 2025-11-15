@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://be0v1kh0cbpkh"]
+
+[ext_resource type="Texture2D" uid="uid://dk0f1tn8s6m4o" path="res://text box/pixil-frame-0(2).png" id="1_1tppw"]
+
+[node name="TextBox" type="MarginContainer"]
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_1tppw")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16

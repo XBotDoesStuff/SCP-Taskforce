@@ -16,7 +16,7 @@ func _ready():
 
 
 func _on_start_pressed():
-	get_tree().change_scene_to_file("res://Scenes/astartesting.tscn")
+	get_tree().change_scene_to_file("res://startscene.tscn")
 	
 
 
